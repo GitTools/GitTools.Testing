@@ -68,7 +68,6 @@
     <Compile Include="VirtualTime.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GitTools.Testing.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

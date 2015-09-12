@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTools.Testing.Tests", "G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTools.Testing.NET4", "GitTools.Testing.NET4\GitTools.Testing.NET4.csproj", "{60DF60CB-070C-4C43-A125-C669A4A5E023}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitTools.Testing", "GitTools.Testing", "{116E45AB-7656-4FF9-82C3-7CFE99F37CD7}"
+	ProjectSection(SolutionItems) = preProject
+		GitTools.Testing.nuspec = GitTools.Testing.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +35,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60DF60CB-070C-4C43-A125-C669A4A5E023} = {116E45AB-7656-4FF9-82C3-7CFE99F37CD7}
 	EndGlobalSection
 EndGlobal
