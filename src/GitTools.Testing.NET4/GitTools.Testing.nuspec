@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>GitTools.Testing</id>
+    <version>$version$</version>
+    <title>GitTools.Testing</title>
+    <authors>GitTools Contributors</authors>
+    <owners>GitTools Contributors</owners>
+    <description>Makes it easy to automate git for testing libraries which interact with git</description>
+    <tags>git tools testing</tags>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright GitTools 2015</copyright>
+    <language>en-US</language>
+    <projectUrl>https://github.com/GitTools/GitTools.Core</projectUrl>
+    <licenseUrl>https://github.com/GitTools/GitTools.Core/blob/develop/LICENSE</licenseUrl>
+    <iconUrl>https://raw.github.com/GitTools/GitTools.Core/develop/GitTools_logo.png</iconUrl>
+    <dependencies>
+      <dependency id="LibGit2Sharp" version="0.22.0-pre20150716071016" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="net4\GitTools.Testing.dll" target="lib\net4\" />
+    <file src="net4\GitTools.Testing.xml" target="lib\net4\" />
+  </files>
+</package>
