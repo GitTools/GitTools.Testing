@@ -26,10 +26,7 @@ namespace GitTools.Testing
             Repository = repository;
             Repository.Config.Set("user.name", "Test");
             Repository.Config.Set("user.email", "test@email.com");
-            IsForTrackedBranchOnly = true;
         }
-
-        public bool IsForTrackedBranchOnly { private get; set; }
 
         public IRepository Repository { get; private set; }
 
