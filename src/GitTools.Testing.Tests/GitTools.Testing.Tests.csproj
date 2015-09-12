@@ -63,12 +63,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GitTools.Testing\GitTools.Testing.NET4.csproj">
-      <Project>{60DF60CB-070C-4C43-A125-C669A4A5E023}</Project>
-      <Name>GitTools.Testing.NET4</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
