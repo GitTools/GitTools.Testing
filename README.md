@@ -9,7 +9,7 @@ using (var fixture = new GitTools.Testing.EmptyRepositoryFixture())
 {
     fixture.MakeACommit();
     fixture.MakeACommit();
-    fixture.MakeATaggedCommit("1.0.0);
+    fixture.MakeATaggedCommit("1.0.0");
     fixture.BranchTo("develop");
     fixture.MakeACommit();
     fixture.Checkout("master");
