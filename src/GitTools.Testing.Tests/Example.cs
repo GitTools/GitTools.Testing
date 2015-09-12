@@ -1,5 +1,4 @@
-﻿using GitTools.Testing.Fixtures;
-using Xunit;
+﻿using Xunit;
 using Xunit.Abstractions;
 
 namespace GitTools.Testing.Tests

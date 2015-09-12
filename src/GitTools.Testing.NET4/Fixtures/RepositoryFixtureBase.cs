@@ -1,10 +1,12 @@
-using System;
-using GitTools.Testing.Internal;
-using GitTools.Testing.Logging;
-using LibGit2Sharp;
+ // ReSharper disable once CheckNamespace
 
-namespace GitTools.Testing.Fixtures
+namespace GitTools.Testing
 {
+    using System;
+    using Internal;
+    using LibGit2Sharp;
+    using Logging;
+
     /// <summary>
     ///     Fixture abstracting a git repository
     /// </summary>

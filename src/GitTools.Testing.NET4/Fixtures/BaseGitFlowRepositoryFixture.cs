@@ -1,9 +1,9 @@
-namespace GitTools.Testing.Fixtures
+ // ReSharper disable once CheckNamespace
+namespace GitTools.Testing
 {
     using System;
     using System.IO;
     using LibGit2Sharp;
-    using Logging;
 
     /// <summary>
     /// Creates a repo with a develop branch off master which is a single commit ahead of master

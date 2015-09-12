@@ -1,4 +1,5 @@
-namespace GitTools.Testing.Fixtures
+// ReSharper disable once CheckNamespace
+namespace GitTools.Testing
 {
     using System.Collections.Generic;
     using System.Text;
@@ -60,14 +61,15 @@ namespace GitTools.Testing.Fixtures
         /// <summary>
         /// Appends a note over one or many participants to the sequence diagram
         /// </summary>
-        public void NoteOver(string noteText, string startParticipant, string endParticipant = null, string prefix = null)
+        public void NoteOver(string noteText, string startParticipant, string endParticipant = null, string prefix = null, string color = null)
         {
             _diagramBuilder.AppendLineFormat(
-                prefix + @"note over {0}{1}
-  {2}
+                prefix + @"note over {0}{1}{2}
+  {3}
 end note",
                 GetParticipant(startParticipant),
                 endParticipant == null ? null : ", " + GetParticipant(endParticipant),
+                color == null ? null : " " + color,
                 noteText.Replace("\n", "\n  "));
         }
 

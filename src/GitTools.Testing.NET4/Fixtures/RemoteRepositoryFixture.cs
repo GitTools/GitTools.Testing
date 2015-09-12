@@ -1,8 +1,8 @@
-﻿namespace GitTools.Testing.Fixtures
+﻿// ReSharper disable once CheckNamespace
+namespace GitTools.Testing
 {
     using System;
     using LibGit2Sharp;
-    using Logging;
 
     /// <summary>
     ///     Creates a remote repository then clones it

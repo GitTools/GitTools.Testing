@@ -1,6 +1,5 @@
-﻿using GitTools.Testing.Logging;
-
-namespace GitTools.Testing.Fixtures
+﻿// ReSharper disable once CheckNamespace
+namespace GitTools.Testing
 {
     using LibGit2Sharp;
 
