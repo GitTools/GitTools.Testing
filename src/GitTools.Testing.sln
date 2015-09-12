@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs", ".configs", "{EB4A8A14-F0E1-424C-84C2-8FF29E4B62FA}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
+		..\GitVersionConfig.yaml = ..\GitVersionConfig.yaml
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
