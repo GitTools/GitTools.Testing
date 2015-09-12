@@ -15,7 +15,7 @@ before_build:
   - ps: gitversion /l console /output buildserver /updateAssemblyInfo
 
 build:
-  project: src\GitTools.Core.sln
+  project: src\GitTools.Testing.sln
 
 after_build:
   - cmd: nuget pack src\GitTools.Testing\GitTools.Testing.nuspec -BasePath output\%CONFIGURATION%\ -version "%GitVersion_NuGetVersion%"
