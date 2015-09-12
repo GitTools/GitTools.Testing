@@ -1,5 +1,12 @@
+![Icon](https://raw.github.com/GitTools/GitTools.Core/develop/GitTools_logo.png)
+
 # GitTools.Testing
 Makes it easy to automate git for testing libraries which interact with git
+
+![License](https://img.shields.io/github/license/gittools/gittools.core.svg)
+![NuGet downloads](https://img.shields.io/nuget/dt/gittools.testing.svg)
+![Version](https://img.shields.io/nuget/v/gittools.testing.svg)
+![Pre-release version](https://img.shields.io/nuget/vpre/gittools.testing.svg)
 
 ## Fixtures
 The main purpose for this library, providing test fixtures which wrap a temporary git repository making it super easy to create test scenarios. For example
@@ -50,3 +57,6 @@ Paste that into one of the tools above to see the result!
 `VirtualTime` - When testing git you can do lots of operations during the same second, this messes git up. VirtualTime increments the time by a minute each time you access `.Now`
 
 And a number of other libgit2sharp extension methods which make the api simpler for your tests.
+
+## Icon
+[Network](https://thenounproject.com/term/network/60865/) by Lorena Salagre from the Noun Project
