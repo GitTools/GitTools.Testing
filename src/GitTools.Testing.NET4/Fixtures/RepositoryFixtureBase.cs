@@ -12,8 +12,8 @@ namespace GitTools.Testing
     /// </summary>
     public abstract class RepositoryFixtureBase : IDisposable
     {
-        private static readonly ILog Logger = LogProvider.For<RepositoryFixtureBase>();
-        private readonly SequenceDiagram _sequenceDiagram;
+        static readonly ILog Logger = LogProvider.For<RepositoryFixtureBase>();
+        readonly SequenceDiagram _sequenceDiagram;
 
         protected RepositoryFixtureBase(Func<string, IRepository> repoBuilder)
             : this(repoBuilder(PathHelper.GetTempPath()))

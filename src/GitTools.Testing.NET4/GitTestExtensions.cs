@@ -9,9 +9,9 @@ namespace GitTools.Testing
     {
         static int _pad = 1;
 
-        public static Commit MakeACommit(this IRepository repository)
+        public static Commit MakeACommit(this IRepository repository, string commitMessage = null)
         {
-            return CreateFileAndCommit(repository, Guid.NewGuid().ToString());
+            return CreateFileAndCommit(repository, Guid.NewGuid().ToString(), commitMessage);
         }
 
         public static void MergeNoFF(this IRepository repository, string branch)
@@ -34,7 +34,7 @@ namespace GitTools.Testing
                              .ToArray();
         }
 
-        public static Commit CreateFileAndCommit(this IRepository repository, string relativeFileName)
+        public static Commit CreateFileAndCommit(this IRepository repository, string relativeFileName, string commitMessage = null)
         {
             var randomFile = Path.Combine(repository.Info.WorkingDirectory, relativeFileName);
             if (File.Exists(randomFile))
@@ -48,7 +48,7 @@ namespace GitTools.Testing
 
             repository.Stage(randomFile);
 
-            return repository.Commit(string.Format("Test Commit for file '{0}'", relativeFileName),
+            return repository.Commit(string.Format("Test Commit for file '{0}' - {1}", relativeFileName, commitMessage),
                 Generate.SignatureNow(), Generate.SignatureNow());
         }
 
