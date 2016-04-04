@@ -19,7 +19,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="src\GitTools.Testing\bin\GitTools.Testing.dll" target="lib\net4\" />
-    <file src="src\GitTools.Testing\bin\GitTools.Testing.xml" target="lib\net4\" />
+    <file src="GitTools.Testing\bin\GitTools.Testing.dll" target="lib\net4\" />
+    <file src="GitTools.Testing\bin\GitTools.Testing.xml" target="lib\net4\" />
   </files>
 </package>
