@@ -18,7 +18,7 @@ build:
   project: src\GitTools.Testing.sln
 
 after_build:
-  - cmd: nuget pack src\GitTools.Testing.nuspec -BasePath src\GitTools.Testing\bin\ -version "%GitVersion_NuGetVersion%"
+  - cmd: nuget pack src\GitTools.Testing.nuspec -version "%GitVersion_NuGetVersion%"
   - cmd: appveyor PushArtifact "GitTools.Testing.%GitVersion_NuGetVersion%.nupkg"
 cache:
   - src\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
