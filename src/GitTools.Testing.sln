@@ -1,23 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs", ".configs", "{EB4A8A14-F0E1-424C-84C2-8FF29E4B62FA}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
+		GitTools.Testing.nuspec = GitTools.Testing.nuspec
 		..\GitVersionConfig.yaml = ..\GitVersionConfig.yaml
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTools.Testing.Tests", "GitTools.Testing.Tests\GitTools.Testing.Tests.csproj", "{5CF365CF-85B2-4AA3-8A17-680EFDF617C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTools.Testing.NET4", "GitTools.Testing.NET4\GitTools.Testing.NET4.csproj", "{60DF60CB-070C-4C43-A125-C669A4A5E023}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitTools.Testing", "GitTools.Testing", "{116E45AB-7656-4FF9-82C3-7CFE99F37CD7}"
-	ProjectSection(SolutionItems) = preProject
-		GitTools.Testing.nuspec = GitTools.Testing.nuspec
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitTools.Testing", "GitTools.Testing\GitTools.Testing.csproj", "{3DCA1530-7A7F-46E4-955F-B4358F1299FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,15 +25,12 @@ Global
 		{5CF365CF-85B2-4AA3-8A17-680EFDF617C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CF365CF-85B2-4AA3-8A17-680EFDF617C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CF365CF-85B2-4AA3-8A17-680EFDF617C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60DF60CB-070C-4C43-A125-C669A4A5E023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60DF60CB-070C-4C43-A125-C669A4A5E023}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60DF60CB-070C-4C43-A125-C669A4A5E023}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60DF60CB-070C-4C43-A125-C669A4A5E023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCA1530-7A7F-46E4-955F-B4358F1299FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCA1530-7A7F-46E4-955F-B4358F1299FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCA1530-7A7F-46E4-955F-B4358F1299FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCA1530-7A7F-46E4-955F-B4358F1299FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{60DF60CB-070C-4C43-A125-C669A4A5E023} = {116E45AB-7656-4FF9-82C3-7CFE99F37CD7}
 	EndGlobalSection
 EndGlobal

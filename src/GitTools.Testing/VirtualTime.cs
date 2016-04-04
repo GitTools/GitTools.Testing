@@ -8,7 +8,7 @@
     /// </summary>
     public static class VirtualTime
     {
-        private static DateTimeOffset _simulatedTime = DateTimeOffset.Now.AddHours(-1);
+        static DateTimeOffset _simulatedTime = DateTimeOffset.Now.AddHours(-1);
 
         /// <summary>
         /// Increments by 1 minute each time it is called
