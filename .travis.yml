@@ -1,0 +1,10 @@
+language: csharp
+solution: src/GitTools.Testing.sln
+sudo: true
+install:
+  - sudo nuget update -self
+  - nuget restore src/GitTools.Testing.sln
+  - nuget install NUnit.Runners -Version 3.2.1 -OutputDirectory ./src/packages
+script:
+  - xbuild ./src/GitTools.Testing.sln /property:Configuration="Debug" /verbosity:detailed
+  - mono --debug --runtime=v4.0.30319 ./src/packages/NUnit.ConsoleRunner.3.2.1/tools/nunit3-console.exe ./src/GitTools.Testing.Tests/bin/Debug/GitTools.Testing.Tests.dll
