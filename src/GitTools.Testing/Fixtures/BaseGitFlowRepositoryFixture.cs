@@ -34,7 +34,7 @@ namespace GitTools.Testing
         {
             var randomFile = Path.Combine(Repository.Info.WorkingDirectory, Guid.NewGuid().ToString());
             File.WriteAllText(randomFile, string.Empty);
-            Repository.Stage(randomFile);
+            Commands.Stage(Repository, randomFile);
 
             initialMasterAction(Repository);
 
