@@ -46,7 +46,7 @@ namespace GitTools.Testing
             var contents = Guid.NewGuid().ToString().PadRight(totalWidth, '.');
             File.WriteAllText(randomFile, contents);
 
-            repository.Stage(randomFile);
+            Commands.Stage(repository, randomFile);
 
             return repository.Commit(string.Format("Test Commit for file '{0}' - {1}", relativeFileName, commitMessage),
                 Generate.SignatureNow(), Generate.SignatureNow());
