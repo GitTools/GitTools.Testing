@@ -1,4 +1,4 @@
-![Icon](https://raw.github.com/GitTools/GitTools.Core/develop/GitTools_logo.png)
+![Icon](https://raw.github.com/GitTools/GitTools.Core/master/GitTools_logo.png)
 
 # GitTools.Testing
 Makes it easy to automate git for testing libraries which interact with git. This library was pulled out of [GitVersion](https://github.com/GitTools/GitVersion) so it could be used in other projects.
