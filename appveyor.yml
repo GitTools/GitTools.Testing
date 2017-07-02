@@ -20,5 +20,13 @@ build:
 after_build:
   - cmd: dotnet pack src\GitTools.Testing\GitTools.Testing.csproj /p:PackageVersion="%GitVersion_NuGetVersion%" /p:NoBuild=true /p:PackageOutputPath=%APPVEYOR_BUILD_FOLDER%
   - cmd: appveyor PushArtifact "GitTools.Testing.%GitVersion_NuGetVersion%.nupkg"
+
+# Setting this off until the auto-detection for dotnet test tooling in AppVeyor
+# is integrated. https://github.com/appveyor/ci/issues/1404
+# The test_script is used as a workaround to fix this.
+test: off
+test_script:
+  - cmd: dotnet test src\GitTools.Testing.Tests\GitTools.Testing.Tests.csproj --configuration %Configuration% --no-build
+
 cache:
   - src\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
