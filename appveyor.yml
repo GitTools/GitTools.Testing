@@ -4,9 +4,6 @@ image:
 install:
   - choco install gitversion.portable -pre -y
 
-platform:
-  - Any CPU
-
 configuration:
   - Release
 
