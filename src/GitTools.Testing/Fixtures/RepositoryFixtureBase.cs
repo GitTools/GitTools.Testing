@@ -65,7 +65,7 @@ namespace GitTools.Testing
 
         public void Checkout(string branch)
         {
-            Repository.Checkout(branch);
+            Commands.Checkout(Repository, branch);
         }
 
         public void MakeATaggedCommit(string tag)
@@ -83,13 +83,15 @@ namespace GitTools.Testing
         public void BranchTo(string branchName, string @as = null)
         {
             _sequenceDiagram.BranchTo(branchName, Repository.Head.FriendlyName, @as);
-            Repository.Checkout(Repository.CreateBranch(branchName));
+            var branch = Repository.CreateBranch(branchName);
+            Commands.Checkout(Repository, branch);
         }
 
         public void BranchToFromTag(string branchName, string fromTag, string onBranch, string @as = null)
         {
             _sequenceDiagram.BranchToFromTag(branchName, fromTag, onBranch, @as);
-            Repository.Checkout(Repository.CreateBranch(branchName));
+            var branch = Repository.CreateBranch(branchName);
+            Commands.Checkout(Repository, branch);
         }
 
         public void MakeACommit()
