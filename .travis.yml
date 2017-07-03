@@ -1,10 +1,16 @@
 language: csharp
+mono: latest
+dotnet: 1.0.4
+dist: trusty
+
 solution: src/GitTools.Testing.sln
 sudo: false
 install:
-  # - sudo nuget update -self
-  - nuget restore src/GitTools.Testing.sln
   - nuget install xunit.runner.console -Version 2.1.0 -OutputDirectory ./src/packages
 script:
-  - xbuild ./src/GitTools.Testing.sln /property:Configuration="Debug" /verbosity:detailed
-  - mono --debug --runtime=v4.0.30319 ./src/packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./src/GitTools.Testing.Tests/bin/Debug/GitTools.Testing.Tests.dll
+  - dotnet restore src/GitTools.Testing.sln
+  - msbuild ./src/GitTools.Testing.sln /property:Configuration=Debug
+  - dotnet test ./src/GitTools.Testing.Tests/GitTools.Testing.Tests.csproj --configuration Debug --no-build --framework netcoreapp1.0
+# Disable testing against .NET 4.5.2 through Mono because it tries to resolve
+# the Windows libgit binary instead of the linux one.
+#  - mono --debug --runtime=v4.0.30319 ./src/packages/xunit.runner.console.2.1.0/tools/xunit.console.exe ./src/GitTools.Testing.Tests/bin/Debug/net452/GitTools.Testing.Tests.dll
