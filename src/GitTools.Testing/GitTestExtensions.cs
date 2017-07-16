@@ -63,7 +63,7 @@ namespace GitTools.Testing
 
         public static Commit CreatePullRequestRef(this IRepository repository, string from, string to, int prNumber = 2, bool normalise = false, bool allowFastFowardMerge = false)
         {
-            repository.Checkout(repository.Branches[to].Tip);
+            Commands.Checkout(repository, repository.Branches[to].Tip);
             if (allowFastFowardMerge)
             {
                 repository.Merge(repository.Branches[from], Generate.SignatureNow());
@@ -74,11 +74,11 @@ namespace GitTools.Testing
             }
             var commit = repository.Head.Tip;
             repository.Refs.Add("refs/pull/" + prNumber + "/merge", commit.Id);
-            repository.Checkout(to);
+            Commands.Checkout(repository, to);
             if (normalise)
             {
                 // Turn the ref into a real branch
-                repository.Checkout(repository.Branches.Add("pull/" + prNumber + "/merge", commit));
+                Commands.Checkout(repository, repository.Branches.Add("pull/" + prNumber + "/merge", commit));
             }
 
             return commit;

@@ -12,17 +12,17 @@ namespace GitTools.Testing
     {
         /// <summary>
         /// Creates a repo with a develop branch off master which is a single commit ahead of master
-        /// 
+        ///
         /// Master will be tagged with the initial version before branching develop
         /// </summary>
-        public BaseGitFlowRepositoryFixture(string initialVersion) : 
+        public BaseGitFlowRepositoryFixture(string initialVersion) :
             this(r => r.MakeATaggedCommit(initialVersion))
         {
         }
 
         /// <summary>
         /// Creates a repo with a develop branch off master which is a single commit ahead of master
-        /// 
+        ///
         /// The initial setup actions will be performed before branching develop
         /// </summary>
         public BaseGitFlowRepositoryFixture(Action<IRepository> initialMasterAction)
@@ -38,7 +38,7 @@ namespace GitTools.Testing
 
             initialMasterAction(Repository);
 
-            Repository.Checkout(Repository.CreateBranch("develop"));
+            Commands.Checkout(Repository, Repository.CreateBranch("develop"));
             Repository.MakeACommit();
         }
     }

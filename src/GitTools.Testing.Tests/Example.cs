@@ -4,7 +4,9 @@ using Xunit.Abstractions;
 namespace GitTools.Testing.Tests
 {
     using System;
+#if NET452
     using System.Runtime.Remoting.Messaging;
+#endif
     using JetBrains.Annotations;
     using Logging;
 
@@ -16,8 +18,10 @@ namespace GitTools.Testing.Tests
         [Fact]
         public void TheReadmeSample()
         {
+#if NET452
             using (LogHelper.Capture(_outputHelper, LogProvider.SetCurrentLogProvider))
             {
+#endif
                 using (var fixture = new EmptyRepositoryFixture())
                 {
                     fixture.MakeACommit();
@@ -28,10 +32,13 @@ namespace GitTools.Testing.Tests
                     fixture.Checkout("master");
                     fixture.MergeNoFF("develop");
                 }
+#if NET452
             }
+#endif
         }
     }
 
+#if NET452
     public static class LogHelper
     {
         private static readonly XUnitProvider Provider;
@@ -45,7 +52,7 @@ namespace GitTools.Testing.Tests
         {
             // TODO Only do this once
             setProvider(Provider);
-            
+
             CallContext.SetData("CurrentOutputHelper", outputHelper);
 
             return new DelegateDisposable(() =>
@@ -101,4 +108,5 @@ namespace GitTools.Testing.Tests
             throw new NotImplementedException();
         }
     }
+#endif
 }

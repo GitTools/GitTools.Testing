@@ -1,8 +1,8 @@
+image:
+  - Visual Studio 2017
+
 install:
   - choco install gitversion.portable -pre -y
-
-platform:
-  - Any CPU
 
 configuration:
   - Release
@@ -11,14 +11,22 @@ assembly_info:
   patch: false
 
 before_build:
-  - nuget restore src\
+  - dotnet restore src\GitTools.Testing.sln
   - ps: gitversion /l console /output buildserver /updateAssemblyInfo
 
 build:
   project: src\GitTools.Testing.sln
 
 after_build:
-  - cmd: nuget pack src\GitTools.Testing.nuspec -version "%GitVersion_NuGetVersion%"
+  - cmd: dotnet pack src\GitTools.Testing\GitTools.Testing.csproj /p:PackageVersion="%GitVersion_NuGetVersion%" /p:NoBuild=true /p:PackageOutputPath=%APPVEYOR_BUILD_FOLDER%
   - cmd: appveyor PushArtifact "GitTools.Testing.%GitVersion_NuGetVersion%.nupkg"
+
+# Setting this off until the auto-detection for dotnet test tooling in AppVeyor
+# is integrated. https://github.com/appveyor/ci/issues/1404
+# The test_script is used as a workaround to fix this.
+test: off
+test_script:
+  - cmd: dotnet test src\GitTools.Testing.Tests\GitTools.Testing.Tests.csproj --configuration %Configuration% --no-build
+
 cache:
   - src\packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
