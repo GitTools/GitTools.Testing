@@ -19,16 +19,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
-    <PackageReference Include="LibGit2Sharp" Version="0.24.0" />
-  </ItemGroup>
-
-  <!-- TODO: Unify this dependency with the LibGit2Sharp NuGet dependency
-    when the portable NuGet has been officially released. -->
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
-    <PackageReference Include="LibGit2Sharp.Portable" Version="0.24.10" />
+    <PackageReference Include="LibGit2Sharp" Version="0.25.0-preview-0033" />
+  </ItemGroup> 
+ 
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">  
     <PackageReference Include="System.Diagnostics.TraceSource" Version="4.3.0" />
   </ItemGroup>
 </Project>

@@ -1,13 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".configs", ".configs", "{EB4A8A14-F0E1-424C-84C2-8FF29E4B62FA}"
 	ProjectSection(SolutionItems) = preProject
 		..\.travis.yml = ..\.travis.yml
 		..\appveyor.yml = ..\appveyor.yml
-		GitTools.Testing.nuspec = GitTools.Testing.nuspec
 		..\GitVersionConfig.yaml = ..\GitVersionConfig.yaml
 		..\README.md = ..\README.md
 	EndProjectSection
