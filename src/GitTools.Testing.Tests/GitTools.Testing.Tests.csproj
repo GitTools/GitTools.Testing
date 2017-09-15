@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">Any CPU</Platform>
+    <OutputType>Library</OutputType>    
     <TargetFrameworks>net452;netcoreapp1.0</TargetFrameworks>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
@@ -18,24 +22,33 @@
     <PackageLicenseUrl>https://github.com/GitTools/GitTools.Core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://raw.github.com/GitTools/GitTools.Core/master/GitTools_logo.png</PackageIconUrl>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>    
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>   
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="15.0.0" />
-    <PackageReference Include="xunit.abstractions" Version="2.0.1" />
-    <PackageReference Include="xunit.core" Version="2.3.0-beta3-build3705" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0-beta3-build3705" />
-    <PackageReference Include="xunit.runner.console" Version="2.3.0-beta3-build3705" />
     <PackageReference Include="LibGit2Sharp" Version="0.25.0-preview-0033" />
-    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta2-build3683" />
-  </ItemGroup> 
-
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="15.3.0" />
+    <PackageReference Include="xunit" Version="2.3.0-beta4-build3742" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0-beta4-build3742" />
+  </ItemGroup>  
+  <ItemGroup Condition="'$(TargetFramework)'=='netcoreapp1.0'">
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta4-build3742" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net452'">    
+    <!--<PackageReference Include="xunit.runner.console" Version="2.3.0-beta4-build3742" />-->   
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GitTools.Testing\GitTools.Testing.csproj" />
-  </ItemGroup> 
-
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
-  </ItemGroup>
- 
+  </ItemGroup>  
 </Project>
